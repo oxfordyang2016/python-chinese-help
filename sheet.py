@@ -959,14 +959,25 @@ def show(k):
 '''  
         if k=='break':
             h='''
-              这立即将展示如何跳出循环
+           1. 这立即将展示如何跳出循环
+
               from amth import sqrt
               for n in range(99,0,-1):
                   root =sqrt(n)
                   if root==int(root):
                       print n
                       break    
-
+           2.这里展示如何跳出while循环
+              k=1
+              while 1: 
+                  events = win32evtlog.ReadEventLog(system_handle, flags,0) 
+                  print type(events)
+                  if not events:  
+                      break 
+                  print events
+                  k=k+1
+                  if k==5:
+                      break
 
 
 
