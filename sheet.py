@@ -3524,8 +3524,9 @@ yangming                    #values['username'] = "1016903103@qq.com"
 '''
             color.cp(h)
 	if k=='print':
+
             h= """
-                     常见的输入格式 
+                    0. 常见的输入格式 
                            s=5
                            1.print 'yangming'+str(a)+'i love you'
                            2.windows 解决输出办法 print uniode('年后一定好好学习','gbk')
@@ -3540,7 +3541,7 @@ yangming                    #values['username'] = "1016903103@qq.com"
                          A. print "Total Employee %d" % Employee.empCount             
 
 
-                     使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。
+                    5. 使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。
                     Python用一个tuple将多个值传递给模板，每个值对应一个格式符。
 
                     比如下面的例子：
@@ -3565,7 +3566,10 @@ yangming                    #values['username'] = "1016903103@qq.com"
                     可以看到，我们对两个格式符进行了命名。命名使用()括起来。每个命名对应词典的一个key。
                     
                      
-                    
+                    6.常见的格式控制（优秀的代码风格）
+                          for x in v['data']:
+                              for key,value in x.items():         
+                                  print '%-20s========>>>> %s'%(key,str(value))
                     格式符
                     
                     格式符为真实值预留位置，并控制显示的格式。
@@ -3893,7 +3897,63 @@ reload(foo)          # 重新导入 foo
             color.cp(h)
         if k=='try':
             h= '''
+                 这里有一个我自已的测试
+import codecs
+import os
+import sys
+import time
+import traceback
+import win32con
+import win32evtlog
+import win32evtlogutil
+import winerror
+hand = win32evtlog.OpenEventLog('localhost','Security')
+total = win32evtlog.GetNumberOfEventLogRecords(hand)
+print "Total events in %s = %s" % ('Security', total)
+flags = win32evtlog.EVENTLOG_BACKWARDS_READ|win32evtlog.EVENTLOG_SEQUENTIAL_READ
+events = win32evtlog.ReadEventLog(hand,flags,0)
+evt_dict={win32con.EVENTLOG_AUDIT_FAILURE:'EVENTLOG_AUDIT_FAILURE',
+              win32con.EVENTLOG_AUDIT_SUCCESS:'EVENTLOG_AUDIT_SUCCESS',
+              win32con.EVENTLOG_INFORMATION_TYPE:'EVENTLOG_INFORMATION_TYPE',
+              win32con.EVENTLOG_WARNING_TYPE:'EVENTLOG_WARNING_TYPE',
+              win32con.EVENTLOG_ERROR_TYPE:'EVENTLOG_ERROR_TYPE'}
+L=[]
+try:
+    events = 1
+    while events:
+        events=win32evtlog.ReadEventLog(hand,flags,0)
+        for ev_obj in events:
+            the_time = ev_obj.TimeGenerated.Format() #'12/23/99 15:54:09'
+            print the_time
+            evt_id = str(winerror.HRESULT_CODE(ev_obj.EventID))
+            print ev_obj.EventID
+            print ev_obj.EventType
+            L=L.append(ev_obj.EventType)
+            computer = str(ev_obj.ComputerName)
+            cat = ev_obj.EventCategory
+            record = ev_obj.RecordNumber
+            msg = win32evtlogutil.SafeFormatMessage(ev_obj, 'Security')
+            msg = msg.encode('gb2312')
+            print msg
+except:
+    print 'code problem'
+    pass
+
+这里即将打印出来code problem
+
+
+
+
+
+
+
+
+
+
+
+
                      这里主要是介绍try系列的用法：
+
                      s='hello'
                      try:
                          print '这一句将在没有任何异常的情况下被打印出来'
