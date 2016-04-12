@@ -2027,6 +2027,11 @@ Method : 一种特殊的函数，函数在类定义中定义。
                  5	tuple(seq)
                  将列表转换为元组。
 
+
+	3、tuple：元组（即常量数组）
+		tuple = ('a', 'b', 'c', 'd', 'e')
+
+		可以用list的 [],:操作符提取元素。就是不能直接修改元素。
 '''
             color.cp(h)
 
@@ -2047,11 +2052,31 @@ Method : 一种特殊的函数，函数在类定义中定义。
 
         if k=='dict':
 
+
             h='''
                  python学习笔记——字典
 
-                 A.创建
+                 已成功方法
+                 1.向字典里面添加东西
+                  a={}
+                  a['yangming']=34
+                  像这样字典会不断被写入元素
+                b={}
+               #for k in L:
+                #   j=0
+                #   for d in L:
+               	 
+               #	 if k==d:
+               	#	   j=j+1
+               	#sort.append[j]  
+               for i in sort:
+                   print 'event %d  occur %d times'%(i,L.count(i)) 
+                   q.append({str(i):L.count(i)})
+                   b[str(i)]=L.count(i) 
 
+                A.创建
+
+                
                  方法一:
 
                  >>> dict1 = {}
@@ -2168,6 +2193,29 @@ Method : 一种特殊的函数，函数在类定义中定义。
                  {'y': 2, 'x': 1}
 
                  dict9 = dict8.copy()
+
+			2、dictionary： 字典（即C++标准库的map）
+			dict = {'ob1':'computer', 'ob2':'mouse', 'ob3':'printer'}
+			每一个元素是pair，包含key、value两部分。key是Integer或string类型，value 是任意类型。
+			键是唯一的，字典只认最后一个赋的键值。
+
+			dictionary的方法
+			D.get(key, 0)       #同dict[key]，多了个没有则返回缺省值，0。[]没有则抛异常
+			D.has_key(key)      #有该键返回TRUE，否则FALSE
+			D.keys()            #返回字典键的列表
+			D.values()
+			D.items()
+
+			D.update(dict2)     #增加合并字典
+			D.popitem()         #得到一个pair，并从字典中删除它。已空则抛异常
+			D.clear()           #清空字典，同del dict
+			D.copy()            #拷贝字典
+			D.cmp(dict1,dict2)  #比较字典，(优先级为元素个数、键大小、键值大小)
+			                    #第一个大返回1，小返回-1，一样返回0
+
+			dictionary的复制
+			dict1 = dict        #别名
+			dict2=dict.copy()   #克隆，即另一个拷贝。
 '''
             color.cp(h)
 
@@ -2953,7 +3001,7 @@ print(OnlyStr("a000 aa-b"))
 			Python 列表操作
 			sample_list = ['a','b',0,1,3]
 
-			得到列表中的某一个值
+@yangming		得到列表中的某一个值
 			value_start = sample_list[0]
 			end_value = sample_list[-1]
 
@@ -2966,9 +3014,23 @@ print(OnlyStr("a000 aa-b"))
 			得到列表的长度
 			list_length = len(sample_list)
 
-			列表遍历
+@yangming		列表遍历
 			for element in sample_list:
 			    print(element)
+@yangming               列表简单排序
+
+                           k=[1,2,3,4,53,2,0,3.6]
+                           d=sorted(k)
+                           print k
+@yangming               列表去掉重复元素
+                        sort=[]
+ 
+                        for k in L:
+                            if k not in sort:
+                                sort.append(k) 
+                        print sort
+                          
+
 
 			Python 列表高级操作/技巧
 
@@ -3022,32 +3084,7 @@ print(OnlyStr("a000 aa-b"))
 			list comprehension
 			   [ <expr1> for k in L if <expr2> ]
 
-			2、dictionary： 字典（即C++标准库的map）
-			dict = {'ob1':'computer', 'ob2':'mouse', 'ob3':'printer'}
-			每一个元素是pair，包含key、value两部分。key是Integer或string类型，value 是任意类型。
-			键是唯一的，字典只认最后一个赋的键值。
 
-			dictionary的方法
-			D.get(key, 0)       #同dict[key]，多了个没有则返回缺省值，0。[]没有则抛异常
-			D.has_key(key)      #有该键返回TRUE，否则FALSE
-			D.keys()            #返回字典键的列表
-			D.values()
-			D.items()
-
-			D.update(dict2)     #增加合并字典
-			D.popitem()         #得到一个pair，并从字典中删除它。已空则抛异常
-			D.clear()           #清空字典，同del dict
-			D.copy()            #拷贝字典
-			D.cmp(dict1,dict2)  #比较字典，(优先级为元素个数、键大小、键值大小)
-			                    #第一个大返回1，小返回-1，一样返回0
-
-			dictionary的复制
-			dict1 = dict        #别名
-			dict2=dict.copy()   #克隆，即另一个拷贝。
-
-			3、tuple：元组（即常量数组）
-			tuple = ('a', 'b', 'c', 'd', 'e')
-			可以用list的 [],:操作符提取元素。就是不能直接修改元素。
 
 			4、string：     字符串（即不能修改的字符list）
 			str = "Hello My friend"
