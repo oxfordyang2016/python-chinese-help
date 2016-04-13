@@ -152,7 +152,8 @@ def show(k):
 
                         1 Linux下Git和GitHub环境的搭建
                         
-                        第一步： 安装Git，使用命令 “sudo apt-get install git”
+                        第一步： 安装Git，使用命令 “sudo apt-get install git”,centos 使用yum install git
+
                         
                         第二步： 创建GitHub帐号
                         
@@ -171,13 +172,20 @@ def show(k):
                         git config --global user.email "your email" //配置email
 
           2 利用Git从本地上传到GitHub
+           {以下是最基本的说明：1.在目录下创建git init ---> 2.在目录下添加到本地仓库 git add sheet.py -->
+             3.查看文件状态 git status sheet.py  --->  4.查看文件做了哪些修改 git diff sheet.py----> 
+             5.添加注释准备提交 git comimit -m " this is test"--->6. git push -f origin maste------->
+             7.git log可以查看最近可以，git log sheet.py查看对应日志的改变  }
           
+
           第一步： 进入要所要上传文件的目录输入命令 “git init”
           
           第二步： 创建一个本地仓库origin，使用命令 “git remote add origin git@github.com:yourName/yourRepo.git”
           youname是你的GitHub的用户名，yourRepo是你要上传到GitHub的仓库
           
           第三步： 比如你要添加一个文件xxx到本地仓库，使用命令 “git add xxx”，可以使用“git add .”自动判断添加哪些文件
+          这里可以使用 git status sheet.py 来查看是否进行了修改 然后对小的脚本文件能够使用 git diff sheet.py来查看文件进行了哪些修改
+          （使用这条命令的时候，可以直接在修改后再次使用，而不必进行的操作，windows如此，但是之前一定要使用git add 将文件放进去！ ）
           
           然后把这个添加提交到本地的仓库，使用命令 ”git commit -m ”说明这次的提交“ “
           
@@ -812,7 +820,9 @@ def show(k):
         if k=='windows':
             h='''
             1.在winr 中输入taskmgr 打开任务管理器
-            2.mstc ip 远程连接常见的主机      
+            2.mstsc -v ip  远程连接常见的主机(对面连接的机子需要以下操作 关闭防火墙---> 控制面板里面--> 计算机-->
+                           系统属性-->远程设置--允许任何计算机连接本机------>关闭待链接防火墙------->ping ip,如果
+                           是连通的话--->远程连接mstsc -v ip  )      
 
 
 
@@ -3481,7 +3491,15 @@ yangming                    #values['username'] = "1016903103@qq.com"
                       for i in range(5):
                           f.write(str(i)+'\ n')
 
+                      f.close()
 
+              windows 的写入模式
+                     f=open('c:\log','w')
+                     f.write('str'+'\ n')
+                     f.close  
+
+
+                    
 '''
             color.cp(h)
 	if k=='for':
