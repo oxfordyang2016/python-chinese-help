@@ -184,7 +184,7 @@ def show(k):
           youname是你的GitHub的用户名，yourRepo是你要上传到GitHub的仓库
           
           第三步： 比如你要添加一个文件xxx到本地仓库，使用命令 “git add xxx”，可以使用“git add .”自动判断添加哪些文件
-          这里可以使用 git status sheet.py 来查看是否进行了修改 然后对小的脚本文件能够使用 git diff sheet.py来查看文件进行了哪些修改
+          这里可以使用 git status sheet.py 来查看是否进行了修改 然后对小的脚本文件能够/使用 git diff sheet.py来查看文件进行了哪些修改
           （使用这条命令的时候，可以直接在修改后再次使用，而不必进行的操作，windows如此，但是之前一定要使用git add 将文件放进去！ ）
           
           然后把这个添加提交到本地的仓库，使用命令 ”git commit -m ”说明这次的提交“ “
@@ -207,6 +207,7 @@ def show(k):
                                   
                                   第二步： 回到要存放的目录下，使用命令 "git clone https://github.com/chenguolin/scrapy.git"，红色的url只是一个例子
                                   
+                                  注：在这里的话，会在当前目录下面创建 scrapy 这个目录
                                   第三步： 如果本地的版本不是最新的，可以使用命令 “git fetch origin”，origin是本地仓库
                                   
                                   第四步： 把更新的内容合并到本地分支，可以使用命令 “git merge origin/master”
@@ -3684,6 +3685,7 @@ yangming                    #values['username'] = "1016903103@qq.com"
                       #import sheet as c  使用c.show('all')这样的效果和sheet.show('all')是一样的
                       #from sheet import show as b 这样就可以使b('all'),就可以展示出所有的东西，源代码应该会将公共变量提取出来
  
+                      # 如果python目录里面里面有两个相同的文件可能会出现，不能import的情况
 
                       #下面进行特别说明：
                       #1. 假如我在sheet.PY这个文件当中有import os 这句话，当我import sheet 时候，直接os.listdir('/root')
