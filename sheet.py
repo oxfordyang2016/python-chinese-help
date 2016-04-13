@@ -134,8 +134,10 @@ def show(k):
                       cron      unix的计划任务学习
                       git       linux 下git工具的使用
                  
-
+                      4月11-13日
+                      git    完成linux端上传，cmd端下载
                      
+
 
 
 
