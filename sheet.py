@@ -157,7 +157,6 @@ def show(k):
                          注：cmd与linux端同步的方法：
                             1.linux端照常设置（按如下提示设置）
                             2.cmd端 git clone url 
-                            3.然后在相同目录下面git init
                             4.采用git add sheet.py
                             5.当linux 端更新的时候，可以使用git fetch，然后使用git merge命令，然后再查看就是正常保持更新的。 
 
