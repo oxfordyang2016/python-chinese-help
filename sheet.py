@@ -139,6 +139,7 @@ def show(k):
                       4月14日
                       git    远程主机同步
                       git    服务器搭建 
+                      git    git cmd 端与linux通讯
                      
 
 
