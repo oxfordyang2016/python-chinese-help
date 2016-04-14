@@ -141,7 +141,8 @@ def show(k):
                       git    服务器搭建 
                       git    git cmd 端与linux通讯
                       git    git cmd端从服务器上fetch
-
+                     请保持耐心
+                   
 
 
 
