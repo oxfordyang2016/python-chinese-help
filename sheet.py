@@ -136,8 +136,10 @@ def show(k):
                  
                       4月11-13日
                       git    完成linux端上传，cmd端下载
+                      4月14日
+                      git    远程主机同步
+                      
                      
-
 
 
 
@@ -212,6 +214,8 @@ def show(k):
                                   注：在这里的话，会在当前目录下面创建 scrapy 这个目录
                                   第三步： 如果本地的版本不是最新的，可以使用命令 “git fetch origin”，origin是本地仓库
                                   
+                 
+                      注意这里：如果gitt clone https://github.com/chenguolin/scrapy.git yangexp 那么就会在pwd目录下面创建yangmingexp这个目录
                                   第四步： 把更新的内容合并到本地分支，可以使用命令 “git merge origin/master”
                                   
                                   如果你不想手动去合并，那么你可以使用： git pull <本地仓库> master // 这个命令可以拉去最新版本并自动合并
@@ -242,7 +246,27 @@ def show(k):
                                   则代表你的 origin 的url 链接有误，可能是创建错误，
                                   也可能是这个 git@github.com:xxx/new-project.git url 指定不正确。重新创建。
                                   
-
+            关于git remote：
+           1.远程主机名：目前看来就是git clone 后面那个网址
+           2.git remote 会列出所有远程主机
+           3.git remote -v 会查看远程主机的网址
+           4.克隆版本库的时候，所使用的远程主机自动被Git命名为origin。如果想用其他的主机名，需要用git clone命令的-o选项指定。
+             $ git clone -o jQuery https://github.com/jquery/jquery.git
+             $ git remote
+              jQuery
+          上面命令表示，克隆的时候，指定远程主机叫做jQuery。
+         git remote show命令加上主机名，可以查看该主机的详细信息。
+         
+         $ git remote show <主机名>
+         git remote add命令用于添加远程主机。
+         
+         $ git remote add <主机名> <网址>
+         git remote rm命令用于删除远程主机。
+         
+         $ git remote rm <主机名>
+         git remote rename命令用于远程主机的改名。
+         
+         $ git remote rename <原主机名> <新主机名> 
                                   
 
 
@@ -3686,13 +3710,14 @@ yangming                    #values['username'] = "1016903103@qq.com"
                       #import C            表示导入C模块
                       #import sheet as c  使用c.show('all')这样的效果和sheet.show('all')是一样的
                       #from sheet import show as b 这样就可以使b('all'),就可以展示出所有的东西，源代码应该会将公共变量提取出来
- 
+                      #目前看来有一种方法可以再修改模块后马上生效，就是reload sheet 这个模块
                       # 如果python目录里面里面有两个相同的文件可能会出现，不能import的情况
 
                       #下面进行特别说明：
                       #1. 假如我在sheet.PY这个文件当中有import os 这句话，当我import sheet 时候，直接os.listdir('/root')
                       #  是不会有任何作用的,但是使用sheet.os.listdir('/root')是会有作用的
-
+                         
+               
                       下面是更详细的笔记
                         python语法31[module/package+import]
 
