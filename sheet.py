@@ -138,8 +138,9 @@ def show(k):
                       git    完成linux端上传，cmd端下载
                       4月14日
                       git    远程主机同步
-                      
+                      git    服务器搭建 
                      
+
 
 
 
