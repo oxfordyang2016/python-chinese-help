@@ -140,7 +140,8 @@ def show(k):
                       git    远程主机同步
                       git    服务器搭建 
                       git    git cmd 端与linux通讯
-                     
+                      git    git cmd端从服务器上fetch
+
 
 
 
