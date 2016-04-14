@@ -141,8 +141,7 @@ def show(k):
                       git    服务器搭建 
                       git    git cmd 端与linux通讯
                       git    git cmd端从服务器上fetch
-                      GIT    2016年4月15日14:26:10
-                      GIT     2016年4月15日14:34:49
+
 
 
 
